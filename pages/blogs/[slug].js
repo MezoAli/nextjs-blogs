@@ -1,5 +1,7 @@
+import PostContent from "../../components/posts/posts-detail/post-content";
+
 function BlogDetailsPage() {
-	return <h1>specific blog Page</h1>;
+	return <PostContent />;
 }
 
 export default BlogDetailsPage;

@@ -13,7 +13,7 @@ function PostItem(props) {
 	const imagePath = `/images/posts/${slug}/${image}`;
 	return (
 		<li className={classes.post}>
-			<Link href="/">
+			<Link href={`/blogs/${slug}`}>
 				<div className={classes.image}>
 					<Image
 						src={imagePath}
