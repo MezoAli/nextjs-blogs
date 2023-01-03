@@ -1,6 +1,6 @@
 import classes from "./logo.module.css";
 function Logo() {
-	return <div>Moutazs Blogs</div>;
+	return <div className={classes.logo}>Moutazs Next Blogs</div>;
 }
 
 export default Logo;

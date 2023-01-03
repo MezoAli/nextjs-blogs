@@ -5,21 +5,21 @@ import Logo from "./logo";
 function MainNavigation() {
 	return (
 		<>
-			<header>
+			<header className={classes.header}>
 				<Link href="/">
 					<Logo />
 				</Link>
+				<nav>
+					<ul>
+						<li>
+							<Link href="/blogs">Blogs</Link>
+						</li>
+						<li>
+							<Link href="/contact">Contact Me</Link>
+						</li>
+					</ul>
+				</nav>
 			</header>
-			<nav>
-				<ul>
-					<li>
-						<Link href="/blogs">Blogs</Link>
-					</li>
-					<li>
-						<Link href="/contact">Contact Me</Link>
-					</li>
-				</ul>
-			</nav>
 		</>
 	);
 }
