@@ -1,21 +1,26 @@
 import classes from "./post-content.module.css";
 import PostHeader from "./post-header";
 import ReactMarkdown from "react-markdown";
-const dummydata = {
-	title: "getting-statrted-with-nextjs",
-	slug: "getting-started-with-nextjs",
-	date: "2022-10-23",
-	image: "getting-started-with-nextjs.png",
-	content: "# test content",
-};
+import Image from "next/image";
 
-const imagePath = `/images/posts/${dummydata.slug}/${dummydata.image}`;
-
-function PostContent() {
+function PostContent({ blog }) {
+	const imagePath = `/images/posts/${blog.slug}/${blog.image}`;
+	const customRenders = {
+		img(image) {
+			return (
+				<Image
+					src={`/images/posts/${blog.slug}/${image.properties.src}`}
+					alt={image.properties.alt}
+					width={600}
+					height={300}
+				/>
+			);
+		},
+	};
 	return (
 		<article className={classes.content}>
-			<PostHeader title={dummydata.title} image={imagePath} />
-			<ReactMarkdown>{dummydata.content}</ReactMarkdown>
+			<PostHeader title={blog.title} image={imagePath} />
+			<ReactMarkdown>{blog.content}</ReactMarkdown>
 		</article>
 	);
 }
