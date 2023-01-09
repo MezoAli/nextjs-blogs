@@ -23,7 +23,7 @@ async function ContactHandler(req, res) {
 		};
 		try {
 			client = await MongoClient.connect(
-				"mongodb+srv://moutazali:1234567890@cluster0.vebfjx8.mongodb.net/blogmessages?retryWrites=true&w=majority"
+				`mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clusername}.vebfjx8.mongodb.net/${process.env.mongodb_databasename}?retryWrites=true&w=majority`
 			);
 		} catch (error) {
 			res.status(500).json({ message: error.message });
