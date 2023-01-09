@@ -3,10 +3,18 @@ import Hero from "../components/home-page/hero";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import Head from "next/head";
 
 function HomePage(props) {
 	return (
 		<>
+			<Head>
+				<title>Moutaz Next Blog</title>
+				<meta
+					name="descreption"
+					content="i blog about front end web development especially frame works like react js and next js "
+				/>
+			</Head>
 			<Hero />
 			<FeaturedPosts posts={props.blogs} />
 		</>

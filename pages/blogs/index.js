@@ -2,9 +2,21 @@ import AllPosts from "../../components/posts/all-posts";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import Head from "next/head";
 
 function BlogPage(props) {
-	return <AllPosts posts={props.blogs} />;
+	return (
+		<>
+			<Head>
+				<title>Moutaz Next Blog</title>
+				<meta
+					name="descreption"
+					content="i blog about front end web development especially frame works like react js and next js "
+				/>
+			</Head>
+			<AllPosts posts={props.blogs} />;
+		</>
+	);
 }
 
 export function getStaticProps() {
