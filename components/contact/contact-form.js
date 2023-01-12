@@ -21,6 +21,7 @@ function ContactForm() {
 	const nameRef = useRef();
 	const messageRef = useRef();
 	const [messageStatus, setMessageStatus] = useState();
+	const [errorMessage, setErrorMessage] = useState();
 
 	useEffect(() => {
 		if (messageStatus === "error" || messageStatus === "success") {
@@ -50,6 +51,7 @@ function ContactForm() {
 			setMessageStatus("success");
 		} catch (error) {
 			setMessageStatus("error");
+			setErrorMessage(error.message);
 			return;
 		}
 	};
@@ -73,7 +75,7 @@ function ContactForm() {
 	if (messageStatus === "error") {
 		notifications = {
 			status: "error",
-			message: "something went wrong...",
+			message: errorMessage,
 			title: "error",
 		};
 	}
